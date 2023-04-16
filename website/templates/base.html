@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title }}</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      {% block navbar %}
+      <div class="navbar-links">
+        <a href="/" class="navbar-link">Startseite</a>
+        <a href="">Produkte</a>
+        <a href="">Kontakt</a>
+      </div>
+      <div class="navbar-login">
+        <a href="/login">Anmelden</a>
+        <a href="/sign-up">Registrieren</a>
+      </div>
+      {% endblock %}
+    </div>
+
+    <!-- Define Flash Messages -->
+    {% with messages = get_flashed_messages (with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %} 
+
+    {% if category == "error" %}
+    <div class="alert" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert-success" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    
+
+    <script src="../static/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="login-form">
+  <h1>Registrieren</h1> <br>
+  <form method="POST">
+
+    <div class="form-group">
+      <label for="name">Ihr Vor- und Nachname</label> <br>
+      <input type="text" class="input" id="name" name="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Ihre E-Mail-Adresse</label> <br>
+      <input type="email" class="input" id="email" name="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="password1">Passwort festlegen</label> <br>
+      <input type="password" class="input" id="password1" name="password1" />
+    </div>
+
+    <div class="form-group">
+      <label for="password2">Passwort wiederholen</label> <br>
+      <input type="password" class="input" id="password2" name="password2" />
+    </div>
+
+    <button type="submit" class="submit-button">Registrieren</button>
+    
+  </form> <br>
+  <p>Sie haben bereits ein Konto? <a href="/login" style="color: rgb(65, 85, 195)">Anmelden</a></p>
+</div>
+
+{% endblock %}

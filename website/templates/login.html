@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="login-form">
+  <h1>Anmelden</h1> <br>
+  <form method="POST">
+
+    <div class="form-group">
+      <label for="email">Ihre E-Mail-Adresse</label> <br>
+      <input type="email" class="input" id="email" name="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Ihr Passwort</label> <br>
+      <input type="password" class="input" id="password" name="password" />
+    </div>
+
+    <button type="submit" class="submit-button">Anmelden</button>
+    
+  </form> <br>
+  <p>Sie haben noch kein Konto? <a href="/sign-up" style="color: rgb(65, 85, 195)">Registrieren</a></p>
+</div>
+
+{% endblock %}
